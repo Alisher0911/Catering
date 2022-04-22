@@ -11,6 +11,8 @@ class AppRouter {
         return LocationScreen.route();
       case BasketScreen.routeName:
         return BasketScreen.route();
+      case EditBasketScreen.routeName:
+        return EditBasketScreen.route();
       case CheckoutScreen.routeName:
         return CheckoutScreen.route();
       case DeliveryTimeScreen.routeName:
@@ -19,9 +21,12 @@ class AppRouter {
         return FilterScreen.route();
       case RestaurantDetailsScreen.routeName:
         return RestaurantDetailsScreen.route(
-          restaurant: settings.arguments as Restaurant);
+          restaurant: settings.arguments as Restaurant
+        );
       case RestaurantListingScreen.routeName:
-        return RestaurantListingScreen.route();
+        return RestaurantListingScreen.route(
+          restaurants: settings.arguments as List<Restaurant>
+        );
       case VoucherScreen.routeName:
         return VoucherScreen.route();
       default:

@@ -8,6 +8,7 @@ class Restaurant extends Equatable {
   final String imageUrl;
   final List<String> tags;
   final List<MenuItem> menuItems;
+  final String priceCategory;
   final int deliveryTime;
   final double deliveryFee;
   final double distance;
@@ -18,13 +19,14 @@ class Restaurant extends Equatable {
     required this.imageUrl,
     required this.tags,
     required this.menuItems,
+    required this.priceCategory,
     required this.deliveryTime,
     required this.deliveryFee,
     required this.distance
   });
 
   @override
-  List<Object?> get props => [id, name, imageUrl, tags, deliveryTime, deliveryFee, distance];
+  List<Object?> get props => [id, name, imageUrl, tags, menuItems, priceCategory, deliveryTime, deliveryFee, distance];
 
   static List<Restaurant> restaurants = [
     Restaurant(
@@ -37,6 +39,7 @@ class Restaurant extends Equatable {
             .toSet()
             .toList(),
         menuItems: MenuItem.menuItems.where((menuitem) => menuitem.restaurantId == 1).toList(),
+        priceCategory: '\$',
         deliveryTime: 30,
         deliveryFee: 2.99,
         distance: 0.1),
@@ -51,6 +54,7 @@ class Restaurant extends Equatable {
             .toSet()
             .toList(),
         menuItems: MenuItem.menuItems.where((menuitem) => menuitem.restaurantId == 2).toList(),
+        priceCategory: '\$',
         deliveryTime: 30,
         deliveryFee: 2.99,
         distance: 0.1),
@@ -65,6 +69,7 @@ class Restaurant extends Equatable {
             .toSet()
             .toList(),
         menuItems: MenuItem.menuItems.where((menuitem) => menuitem.restaurantId == 3).toList(),
+        priceCategory: '\$',
         deliveryTime: 30,
         deliveryFee: 2.99,
         distance: 0.1),
@@ -79,6 +84,7 @@ class Restaurant extends Equatable {
             .toSet()
             .toList(),
         menuItems: MenuItem.menuItems.where((menuitem) => menuitem.restaurantId == 4).toList(),
+        priceCategory: '\$',
         deliveryTime: 30,
         deliveryFee: 2.99,
         distance: 0.1),
@@ -93,6 +99,7 @@ class Restaurant extends Equatable {
             .toSet()
             .toList(),
         menuItems: MenuItem.menuItems.where((menuitem) => menuitem.restaurantId == 5).toList(),
+        priceCategory: '\$',
         deliveryTime: 30,
         deliveryFee: 2.99,
         distance: 0.1),
