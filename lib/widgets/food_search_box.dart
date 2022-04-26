@@ -19,7 +19,7 @@ class FoodSearchBox extends StatelessWidget {
                 hintText: "What would you like to eat?",
                 suffixIcon: Icon(
                   Icons.search,
-                  color: Theme.of(context).primaryColor
+                  color: Theme.of(context).colorScheme.primary
                 ),
                 contentPadding: const EdgeInsets.only(left: 20, bottom: 5, top: 12.5),
                 focusedBorder: OutlineInputBorder(
@@ -46,9 +46,9 @@ class FoodSearchBox extends StatelessWidget {
             ),
             child: IconButton(
                 icon: Icon(Icons.menu),
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 onPressed: () {
-                  Navigator.pushNamed(context, '/filters');
+                  Navigator.pushNamed(context, '/filter');
                 },
             ),
           )

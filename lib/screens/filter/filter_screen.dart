@@ -33,7 +33,7 @@ class FilterScreen extends StatelessWidget {
                 else if (state is FilterLoaded) {
                   return ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: Theme.of(context).colorScheme.secondary,
+                        primary: Theme.of(context).colorScheme.primary,
                         shape: RoundedRectangleBorder(),
                         padding: const EdgeInsets.symmetric(horizontal: 50)),
                     child: Text("Apply"),
@@ -72,11 +72,11 @@ class FilterScreen extends StatelessWidget {
             children: [
               Text("Price",
                   style: Theme.of(context).textTheme.headline4!.copyWith(
-                      color: Theme.of(context).colorScheme.secondary)),
+                      color: Theme.of(context).colorScheme.primary)),
               CustomPriceFilter(),
               Text("Category",
                   style: Theme.of(context).textTheme.headline4!.copyWith(
-                      color: Theme.of(context).colorScheme.secondary)),
+                      color: Theme.of(context).colorScheme.primary)),
               CustomCategoryFilter(),
             ],
           ),

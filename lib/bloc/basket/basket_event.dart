@@ -49,3 +49,23 @@ class ToggleSwitch extends BasketEvent {
   @override
   List<Object> get props => [];
 }
+
+
+class AddVoucher extends BasketEvent {
+  final Voucher voucher;
+
+  const AddVoucher(this.voucher);
+
+  @override
+  List<Object> get props => [voucher];
+}
+
+
+class SelectDeliveryTime extends BasketEvent {
+  final DeliveryTime deliveryTime;
+
+  const SelectDeliveryTime(this.deliveryTime);
+
+  @override
+  List<Object> get props => [deliveryTime];
+}

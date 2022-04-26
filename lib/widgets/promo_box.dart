@@ -14,7 +14,7 @@ class PromoBox extends StatelessWidget {
         width: MediaQuery.of(context).size.width - 40,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             image: DecorationImage(
                 image: NetworkImage(promo.imageUrl),
                 fit: BoxFit.cover)
@@ -28,7 +28,7 @@ class PromoBox extends StatelessWidget {
           width: MediaQuery.of(context).size.width - 40,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
           ),
       
           child: Padding(

@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: CustomAppBar(),
         body: SingleChildScrollView(
           child: Column(
@@ -29,13 +29,13 @@ class HomeScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 100,
                   child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: Category.categories.length,
-                    itemBuilder: ((context, index) {
-                      return CategoryBox(category: Category.categories[index]);
-                    })
-                  ),
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: Category.categories.length,
+                      itemBuilder: ((context, index) {
+                        return CategoryBox(
+                            category: Category.categories[index]);
+                      })),
                 ),
               ),
 
@@ -44,27 +44,23 @@ class HomeScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 125,
                   child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: Promo.promos.length,
-                    itemBuilder: ((context, index) {
-                      return PromoBox(promo: Promo.promos[index]);
-                    })
-                  ),
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: Promo.promos.length,
+                      itemBuilder: ((context, index) {
+                        return PromoBox(promo: Promo.promos[index]);
+                      })),
                 ),
               ),
 
               FoodSearchBox(),
 
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text("Top Rated",
-                    style: Theme.of(context).textTheme.headline4
-                  )
-                )
-              ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text("Top Rated",
+                          style: Theme.of(context).textTheme.headline4))),
 
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
@@ -73,14 +69,12 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return RestaurantCard(restaurant: Restaurant.restaurants[index]);
                 }
-              )
+              ),
             ],
           ),
         ));
   }
 }
-
-
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomAppBar({
@@ -90,7 +84,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       leading: IconButton(
         icon: Icon(Icons.person),
         onPressed: () {},
